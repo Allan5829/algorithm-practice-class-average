@@ -1,16 +1,29 @@
-/* examples for reference
+/*
 takeDownAverage(["95%", "83%", "90%", "87%", "88%", "93%"]) ➞ "54%"
 takeDownAverage(["10%"]) ➞ "0%"
 takeDownAverage(["53%", "79%"]) ➞ "51%"
 */
 
 function takeDownAverage(scores) {
-	console.log("test")
+  let result;
+	console.log(result)
 }
 
-takeDownAverage()
+takeDownAverage(["95%", "83%", "90%", "87%", "88%", "93%"])
 
-/* tests to pass
+/*
+pseudo code
+-turn to integers
+-get sum 95+83+90+87+88+93=536 sum
+-get current average 536/6=89.33 sum/array count= current average
+-subtract current average by 5 89.33-5=84.33 current average-5=target average
+-multiply target average by array count +1 84.33*(6+1)=590.31 target average * array count+1 = new sum
+-subtract old sum from new sum 590.31-536=54.31 new sum-old sum = test score
+-round to nearest whole number 54.31 -> 54
+-return test score in expected format "54%"
+*/
+
+/*
 let [actualParam, expectedParam] = [[
     ["95%", "83%", "90%", "87%", "88%", "93%"], ["10%"], ["74%", "76%", "58%", "50%", "99%", "70%"],
     ["64%", "95%", "89%", "69%", "96%", "59%", "84%", "93%"], ["77%", "77%"], ["73%", "98%"],
