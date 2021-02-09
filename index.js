@@ -1,4 +1,4 @@
-/*
+/* example results
 takeDownAverage(["95%", "83%", "90%", "87%", "88%", "93%"]) ➞ "54%"
 takeDownAverage(["10%"]) ➞ "0%"
 takeDownAverage(["53%", "79%"]) ➞ "51%"
@@ -14,18 +14,21 @@ function takeDownAverage(scores) {
   let currentAverage = 0;
   let targetAverage = 0;
 
+  // Get sum
   for (let i = 0; i < scoreCount; i++) {
     let addNum = parseInt(scores[i], 10)
     currentSum += addNum
   }
+
+  // Perform math logic
   currentAverage = currentSum/scoreCount
   targetAverage = currentAverage - 5
   targetSum = targetAverage * (scoreCount + 1)
   testScore = targetSum - currentSum
   testScore = Math.round(testScore)
-  result = `"${testScore}%"`
+  result = `${testScore}%`
 
-  console.log(result)
+  //console.log(result)
   return result
 }
 
@@ -43,14 +46,6 @@ pseudo code
 -return test score in expected format "54%"
 */
 
-/*
-let [actualParam, expectedParam] = [[
-    ["95%", "83%", "90%", "87%", "88%", "93%"], ["10%"], ["74%", "76%", "58%", "50%", "99%", "70%"],
-    ["64%", "95%", "89%", "69%", "96%", "59%", "84%", "93%"], ["77%", "77%"], ["73%", "98%"],
-    ["96%", "87%", "66%"], ["94%", "79%", "54%", "62%"], ["56%", "50%"], ["100%", "51%", "98%"],
-    ["85%", "74%", "61%", "70%", "56%", "67%", "53%", "53%"],
-    ["67%", "91%", "93%", "87%", "81%", "79%", "88%", "69%", "92%", "69%"], ["75%", "100%"]],
-    ["54%", "0%", "36%", "36%", "62%", "71%", "63%", "47%", "38%", "63%", "20%", "27%", "73%"]
-  ]
-  for (let i in actualParam) Test.assertEquals(takeDownAverage(actualParam[i]), expectedParam[i])
-  */
+// tested code on edabit and passes all tests
+// other solutions are more compact
+// could refactor with array.reduce() and perform more logic in one line to reduce amount of variables
