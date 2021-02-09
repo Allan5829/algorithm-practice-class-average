@@ -5,18 +5,28 @@ takeDownAverage(["53%", "79%"]) ➞ "51%"
 */
 
 function takeDownAverage(scores) {
-  let result;
+  // Declare variables
+  let result = "";
+  let testScore = 0;
   const scoreCount = scores.length;
   let currentSum = 0;
   let targetSum = 0;
+  let currentAverage = 0;
+  let targetAverage = 0;
+
   for (let i = 0; i < scoreCount; i++) {
     let addNum = parseInt(scores[i], 10)
     currentSum += addNum
   }
+  currentAverage = currentSum/scoreCount
+  targetAverage = currentAverage - 5
+  targetSum = targetAverage * (scoreCount + 1)
+  testScore = targetSum - currentSum
+  testScore = Math.round(testScore)
+  result = `"${testScore}%"`
 
-  console.log(scoreCount, currentSum)
-
-	//console.log(result)
+  console.log(result)
+  return result
 }
 
 takeDownAverage(["95%", "83%", "90%", "87%", "88%", "93%"])
